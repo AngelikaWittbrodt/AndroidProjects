@@ -15,7 +15,7 @@ public class ViewHolder {
     private TextView email;
 
     public ViewHolder(View v) {
-        super(v);
+        super();
         fullName = (TextView) v.findViewById(R.id.full_name);
         birthDate = (TextView) v.findViewById(R.id.birth_date);
         phoneNumber = (TextView) v.findViewById(R.id.phone_number);
