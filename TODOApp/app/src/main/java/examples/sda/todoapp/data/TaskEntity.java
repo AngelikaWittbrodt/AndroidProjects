@@ -6,23 +6,23 @@ package examples.sda.todoapp.data;
 
 public class TaskEntity {
     //TODO stworzyć pola w naszej bazie danych
-    private Integer id;
+    private String id;
     private String title;
     private String description;
-    private Boolean completed;
+    private boolean completed;
 
-    public TaskEntity(Integer id, String title, String description, Boolean completed) {
+    public TaskEntity(String id, String title, String description, boolean completed) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.completed = completed;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -42,11 +42,11 @@ public class TaskEntity {
         this.description = description;
     }
 
-    public Boolean getCompleted() {
+    public boolean isCompleted() {
         return completed;
     }
 
-    public void setCompleted(Boolean completed) {
+    public void setCompleted(boolean completed) {
         this.completed = completed;
     }
 }

@@ -1,8 +1,10 @@
 package examples.sda.todoapp.data;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.annotation.NonNull;
 
 /**
  * Created by angelika on 23.05.17.
@@ -33,6 +35,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS" + TodoContract.TodoEntry.TABLE_NAME);
         db.execSQL(SQL_CREATE_ENTRIES);
+    }
 
+    public long saveTask(@NonNull TaskEntity taskEntity) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(TodoContract.TodoEntry.COLUMN_NAME_TITLE, taskEntity.getTitle());
+        values.put(TodoContract.TodoEntry.COLUMN_NAME_DESCRIPTION, taskEntity.getDescription());
+        values.put(TodoContract.TodoEntry.COLUMN_NAME_COMPLETED, taskEntity.isCompleted());
+
+
+        return db.insert(TodoContract.TodoEntry.TABLE_NAME, null, values);
     }
 }
