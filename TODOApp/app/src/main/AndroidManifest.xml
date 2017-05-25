@@ -3,6 +3,7 @@
     package="examples.sda.todoapp">
 
     <application
+        android:windowSoftInputMode="adjustResize"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,10 +13,9 @@
         <activity android:name=".TaskListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="examples.sda.todoapp.TaskDetailActivty"></activity>
     </application>
-
 </manifest>

@@ -7,7 +7,6 @@ import android.provider.BaseColumns;
  */
 
 public final class TodoContract {
-    //inner class with table name: TASK
     private TodoContract() {
     }
 
