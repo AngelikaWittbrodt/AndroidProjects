@@ -5,24 +5,25 @@ package examples.sda.todoapp.data;
  */
 
 public class TaskEntity {
-    //TODO stworzyć pola w naszej bazie danych
-    private String id;
+    private long id;
     private String title;
     private String description;
     private boolean completed;
 
-    public TaskEntity(String id, String title, String description, boolean completed) {
+    public TaskEntity(long id, String title, String description, boolean completed) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.completed = completed;
     }
 
-    public String getId() {
+    public TaskEntity() {}
+
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
