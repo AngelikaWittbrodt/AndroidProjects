@@ -24,7 +24,6 @@ import examples.sda.todoapp.data.TaskEntity;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 		private List<TaskEntity> tasks;
 
-
 		public MyAdapter(List<TaskEntity> tasks) {
 				this.tasks = tasks;
 		}

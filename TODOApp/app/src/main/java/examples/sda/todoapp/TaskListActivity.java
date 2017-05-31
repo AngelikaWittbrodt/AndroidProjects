@@ -40,8 +40,6 @@ public class TaskListActivity extends AppCompatActivity {
 
 				taskDataSource = TaskDataSource.getInstance(this);
 				taskDataSource.openDataBase();
-
-
 		}
 
 		public void initListView() {
