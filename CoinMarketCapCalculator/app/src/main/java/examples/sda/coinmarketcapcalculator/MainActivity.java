@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
 		@Override
 		public void onDataLoaded(CoinTable coinTable) {
-				coinTable = new CoinTable();
 				coinAdapter.setData(coinTable.getCurrencies());
 				swipeRefreshLayout.setRefreshing(false);
 		}

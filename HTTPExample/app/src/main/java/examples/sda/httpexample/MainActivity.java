@@ -58,4 +58,7 @@ public class MainActivity extends Activity {
         });
 
     }
+
+    public void goURL(View view) {
+    }
 }

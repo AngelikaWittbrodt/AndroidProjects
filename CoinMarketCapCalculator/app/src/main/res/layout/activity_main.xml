@@ -7,6 +7,26 @@
 		android:orientation="vertical"
 		tools:context="examples.sda.coinmarketcapcalculator.MainActivity">
 
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:background="@color/colorPrimary"
+				android:padding="16dp">
+
+				<TextView
+						android:id="@+id/currencies_text"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Currencies"
+						android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+				<Space
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"/>
+		</LinearLayout>
+
 		<android.support.v4.widget.SwipeRefreshLayout
 				android:id="@+id/swipe_refresh"
 				android:layout_width="match_parent"
@@ -16,7 +36,6 @@
 						android:id="@+id/recycler_view"
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
-						android:scrollbarStyle="insideInset"
 						android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
 
 		</android.support.v4.widget.SwipeRefreshLayout>

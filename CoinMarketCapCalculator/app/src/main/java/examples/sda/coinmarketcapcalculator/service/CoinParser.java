@@ -17,16 +17,15 @@ import examples.sda.coinmarketcapcalculator.model.CoinTable;
 public class CoinParser {
 
 		public CoinTable parseCoinTable(String string) throws JSONException {
-
 				CoinTable coinTable = new CoinTable();
-				List<CoinModel> currencies = parseCoinArray(string);
+				JSONArray array = new JSONArray(string);
+				List<CoinModel> currencies = parseCoinArray(array);
 				coinTable.setCurrencies(currencies);
 				return coinTable;
 		}
 
-		public List<CoinModel> parseCoinArray(String string) throws JSONException {
+		public List<CoinModel> parseCoinArray(JSONArray array) throws JSONException {
 				List<CoinModel> coins = new ArrayList<>();
-				JSONArray array = new JSONArray(string);
 
 				for (int i = 0; i < array.length(); i++) {
 						JSONObject jsonCoin = array.getJSONObject(i);
@@ -43,7 +42,9 @@ public class CoinParser {
 						long totalSupply = jsonCoin.optLong("total_supply");
 						double percentChange1h = jsonCoin.optDouble("percent_change_1h");
 						double percentChange24h = jsonCoin.optDouble("percent_change_24h");
-						double percentChange7d = jsonCoin.getDouble("percent_change_7d");
+
+						double percentChange7d = jsonCoin.optDouble("percent_change_7d");
+
 						long lastUpdate = jsonCoin.optLong("last_updated");
 
 						CoinModel coinModel = new CoinModel();
