@@ -31,8 +31,12 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
 				coinAdapter = new CoinAdapter();
 				recyclerView.setAdapter(coinAdapter);
-
 				onRefresh();
+//				try {
+//						getBitmapFromURL("https://files.coinmarketcap.com/static/img/coins/16x16/bitcoin.png");
+//				} catch (IOException e) {
+//						Log.e("Exception", e.toString());
+//				}
 		}
 
 		@Override
@@ -45,4 +49,24 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 				coinAdapter.setData(coinTable.getCurrencies());
 				swipeRefreshLayout.setRefreshing(false);
 		}
+
+		/*public void getBitmapFromURL(String path) throws IOException {
+				Bitmap myBitmap = null;
+				InputStream inputStream = null;
+				ImageView imageView = (ImageView) findViewById(R.id.headerImage);
+				int responseCode = -1;
+
+
+				URL url = new URL(path);
+				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+				connection.setDoInput(true);
+				connection.connect();
+				responseCode = connection.getResponseCode();
+				if (responseCode == HttpURLConnection.HTTP_OK) {
+						inputStream = connection.getInputStream();
+						myBitmap = BitmapFactory.decodeStream(inputStream);
+						imageView.setImageBitmap(myBitmap);
+						inputStream.close();
+				}*/
 }
+
